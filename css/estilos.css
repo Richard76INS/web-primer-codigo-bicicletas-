@@ -306,70 +306,98 @@ overflow: hidden;
 
 }
 
-.testimonio{
-
-background-color: #A9A9A9;
-
-
-}
-.testimonio_contenedor{
-  display: grid;
-  grid-template-columns: 50px 1fr 50px;
-  gap: 1em;
-  align-items: center;
-
+/* Contenedor principal */
+.testimonio_contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.testimonio_body{
-  display:grid;
-  grid-template-columns: 1fr max-content;
-  justify-content:space-between;
-  align-items: center;
-  gap:2em;
-  grid-column: 2/3;
-  grid-row: 1/2;
-  opacity: 0;
-  pointer-events: none;
-
+/* Flechas de navegación */
+.testimonio_arrow {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
 }
 
-.testimonio_body--show{
-  pointer-events: unset;
-  opacity: 1;
-  transition: opacity 1.5s ease-in-out;
-
-
+/* Cuerpo del testimonio */
+.testimonio_body {
+    display: none;
+    flex: 1;
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    text-align: center;
 }
 
-
-
-
-.testimonio_img{
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 50% 20%;
- 
-}
-.subtitulos{
-   margin-bottom: 20px;
-   background-color: royalblue;
-   color: #fff;
-   display: inline-block;
-   padding: 5px;
-
+.testimonio_body--show {
+    display: block;
 }
 
-.testimonio_texto{
-  max-width: 700px;
-  
+/* Texto del testimonio */
+.testimonio_texto {
+    margin-bottom: 20px;
 }
 
-
-.testimonio_arrow{
-  width: 90%;
-  cursor: pointer;
+.testimonio_texto h2.sub {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
+.testimonio_texto .subtitulos {
+    display: block;
+    font-size: 1.2rem;
+    color: #555;
+}
 
+.testimonio_review {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #333;
+}
+
+/* Imagen del testimonio */
+.testimonio_pic {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.testimonio_img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Responsividad para móviles */
+@media screen and (max-width: 768px) {
+    .testimonio_contenedor {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .testimonio_arrow {
+        margin: 10px 0;
+    }
+
+    .testimonio_texto h2.sub {
+        font-size: 1.5rem;
+    }
+
+    .testimonio_texto .subtitulos {
+        font-size: 1rem;
+    }
+
+    .testimonio_review {
+        font-size: 1rem;
+    }
+
+    .testimonio_pic {
+        max-width: 100%;
+    }
+}
