@@ -72,3 +72,27 @@
     }
 
 })();
+
+// acordeon.js - Funcionalidad del acordeón
+document.addEventListener('DOMContentLoaded', function() {
+    const acordeonItems = document.querySelectorAll('.acordeon-item');
+    
+    acordeonItems.forEach(item => {
+        const header = item.querySelector('.acordeon-header');
+        
+        header.addEventListener('click', function() {
+            // Cerrar otros acordeones
+            acordeonItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('activo')) {
+                    otherItem.classList.remove('activo');
+                }
+            });
+            
+            // Toggle acordeón actual
+            item.classList.toggle('activo');
+        });
+    });
+    
+    // Abrir primer acordeón por defecto (opcional)
+    // acordeonItems[0].classList.add('activo');
+});

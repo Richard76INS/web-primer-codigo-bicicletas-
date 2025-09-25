@@ -52,6 +52,14 @@ color: #fff;
 
 }
 
+.nav_contenedor{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+
+}
+
 
 .nav{
 
@@ -67,13 +75,16 @@ color: #fff;
 
 }
 .nav_link{
-
-  margin-left: 55%;
+ 
+  margin-left:48%;
   padding: 0;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
-  gap: 1.5em;
+  gap: 1em;
+  list-style-type: none;
+  
+ 
 }
 
 .nav_titulo{
@@ -87,42 +98,50 @@ color: #fff;
 }
 
 
-.nav_links{
-  color: #fff;
-  text-decoration: none;
-
-}
-
-
-.nav_items{
-  list-style: none;
-}
-
-.nav_menu{
-  margin-left: auto;
+.burger{
+   display: none;
+  flex-direction: column;
   cursor: pointer;
+
+}
+
+.line {
+  width: 40px;
+  height: 5px;
+  background-color: #444cf7;
+  margin: 3px 0;
+  gap: 1em;
+}
+
+
+
+.nav_links{
+  
+  color:white;
+  text-decoration:none;
+
   
 }
 
-.nav_img{
-  display: block;
-  width: 30px;
+
+
+.nav_links:hover{
+  color:#f39c12
  
-
-}
-
-.close{
-  width: 20px;
-  height: 20px;
-  display: none;
-}
-
-.img2{
-  width: 20px;
-  height: 20px;
-  display: none;
   
 }
+
+
+@media(max-width: 768px) {
+    .burger {
+        display:flex;
+        
+    }
+    
+}
+
+
+
 
 .hero_contenedor{
   max-width: 800px;
@@ -306,6 +325,12 @@ overflow: hidden;
 
 }
 
+.testimonio{
+  background-color: #e2dbd9;
+}
+
+
+
 /* Contenedor principal */
 .testimonio_contenedor {
     display: flex;
@@ -315,7 +340,7 @@ overflow: hidden;
     overflow: hidden;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 60px;
 }
 
 /* Flechas de navegación */
@@ -352,7 +377,7 @@ overflow: hidden;
 .testimonio_texto .subtitulos {
     display: block;
     font-size: 1.2rem;
-    color: #555;
+    color:#5454da;
 }
 
 .testimonio_review {
@@ -400,4 +425,183 @@ overflow: hidden;
     .testimonio_pic {
         max-width: 100%;
     }
+}
+
+/* CONTENEDOR PRINCIPAL */
+.cuestionario {
+    padding: 40px 20px;
+    background: white;
+}
+
+.cuestion_contenedor {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+/* ITEMS DEL ACORDEÓN */
+.acordeon-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: white;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.acordeon-item:hover {
+    border-color: #007bff;
+}
+
+/* HEADER DEL ACORDEÓN */
+.acordeon-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: #fff;
+    transition: background 0.3s ease;
+}
+
+.acordeon-header:hover {
+    background: #f8f9fa;
+}
+
+.acordeon-title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* FLECHA/ICONO */
+.acordeon-arrow {
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* CONTENIDO DEL ACORDEÓN */
+.acordeon-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0 20px;
+    background: #fafafa;
+}
+
+.acordeon-text {
+    margin: 0;
+    padding: 20px 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ESTADO ABIERTO */
+.acordeon-item.activo {
+    border-color: #007bff;
+    box-shadow: 0 2px 10px rgba(0,123,255,0.1);
+}
+
+.acordeon-item.activo .acordeon-header {
+    background: #007bff;
+}
+
+.acordeon-item.activo .acordeon-title {
+    color: white;
+}
+
+.acordeon-item.activo .acordeon-content {
+    max-height: 500px; /* Ajusta según tu contenido */
+    padding: 0 20px;
+}
+
+.acordeon-item.activo .arrow-icon {
+    transform: rotate(-90deg);
+    filter: brightness(0) invert(1); /* Hacer flecha blanca */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .acordeon-header {
+        padding: 15px;
+    }
+    
+    .acordeon-title {
+        font-size: 1.1rem;
+    }
+    
+    .acordeon-text {
+        padding: 15px 0;
+    }
+}
+
+.offer{
+  
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+
+.cta{
+  margin-top: 30px;
+}
+
+.footer{
+  background-color:#043c74;
+}
+
+.footer_title, .newsle{
+  font-weight: 300;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.footer_contenedor{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 60px;
+}
+
+.nav--footer{
+  padding-bottom: 20px;
+  display: grid;
+  gap: 1em;
+  grid-auto-flow: row;
+  height: 100%;
+}
+
+.nav_link--footer{
+  display: flex;
+  margin: 0;
+  margin-right: 20px;
+  flex-wrap:wrap;
+}
+
+.inpute{
+  margin-top: 10px;
+  display: flex;
+  overflow: hidden;
+}
+
+.input{
+  background-color: white;
+  height: 50px;
+  display:flex;
+  padding-left: 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  margin-right: 16px;
+
 }
